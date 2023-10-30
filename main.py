@@ -2,6 +2,13 @@ from random import randint
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """
+    Симулирует действие атаки персонажа.
+
+    :param char_name: Имя персонажа.
+    :param char_class: Класс персонажа (воин, маг или лекарь).
+    :return: Строка, описывающая действие атаки и её результат.
+    """
     if char_class == 'warrior':
         return (f'{char_name} нанёс противнику урон, равный '
                 f'{5 + randint(3, 5)}')
@@ -14,6 +21,13 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """
+    Симулирует действие защиты персонажа.
+
+    :param char_name: Имя персонажа.
+    :param char_class: Класс персонажа (воин, маг или лекарь).
+    :return: Строка, описывающая действие защиты и её результат.
+    """
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} ед. урона')
     if char_class == 'mage':
@@ -23,6 +37,13 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """
+    Симулирует использование специального умения персонажа.
+
+    :param char_name: Имя персонажа.
+    :param char_class: Класс персонажа (воин, маг или лекарь).
+    :return: Строка, описывающая использование специального умения и его результат.
+    """
     if char_class == 'warrior':
         return (f'{char_name} применил специальное умение '
                 f'«Выносливость {80 + 25}»')
@@ -33,6 +54,13 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """
+    Начинает тренировку персонажа.
+
+    :param char_name: Имя персонажа.
+    :param char_class: Класс персонажа (воин, маг или лекарь).
+    :return: Строка, сообщающая об окончании тренировки.
+    """
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — великий мастер ближнего боя.')
     if char_class == 'mage':
@@ -57,6 +85,11 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """
+    Позволяет игроку выбрать класс персонажа.
+
+    :return: Класс персонажа, выбранный игроком (воин, маг или лекарь).
+    """
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
@@ -79,6 +112,12 @@ def choice_char_class() -> str:
 
 
 def main():
+    """
+    Главная функция, запускающая игру.
+
+    Здесь игроку предоставляется выбор имени и класса персонажа,
+    а затем начинается тренировка персонажа.
+    """
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name: str = input('...назови себя: ')
